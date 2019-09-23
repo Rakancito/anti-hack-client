@@ -55,16 +55,6 @@ void initCheat()
 		killProcessByName(pe32.szExeFile);
 		killProcessByName("metin2client.exe");
 	}
-	else if (strcmp(pe32.szExeFile, "M2Bob_Dll.dll") == 0)
-	{
-		killProcessByName(pe32.szExeFile);
-		killProcessByName("metin2client.exe");
-	}
-	else if (strcmp(pe32.szExeFile, "M2Bob.exe") == 0)
-	{
-		killProcessByName(pe32.szExeFile);
-		killProcessByName("metin2client.exe");
-	}
 
     // Retrieve the priority class.
     dwPriorityClass = 0;
@@ -209,19 +199,6 @@ void vAntiCheat()
 		{
 			killProcessByName(pe32.szExeFile);
 			killProcessByName("metin2client.exe");
-		}
-
-		cExeFile = pe32.szExeFile;
-		for (int i = 0, iCount = 0; cExeFile[i]; i++)
-		{
-			if (isdigit(cExeFile[i]))
-			{
-				iCount++;
-			}
-			if (iCount >= 6)
-			{
-				killProcessByName("metin2client.exe");
-			}
 		}
 
 		// Retrieve the priority class.
